@@ -18,6 +18,7 @@ RUN apk add --no-cache --virtual .build-deps \
   && mkdir -p ${NODE_LIB} \
   && npm config set prefix ${NPM_CONFIG_PREFIX} \
   && cd ${NODE_LIB} && npm i mediasoup \
-  && apk del .build-deps
+  && apk del .build-deps \
+  && rm -rf /root/.npm-global/lib/node_modules/mediasoup/worker/out/Release/obj.target
 
   ENTRYPOINT [ "node" ]
