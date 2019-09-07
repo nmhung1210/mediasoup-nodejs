@@ -21,4 +21,4 @@ RUN apk add --no-cache --virtual .build-deps \
   && apk del .build-deps \
   && rm -rf /root/.npm-global/lib/node_modules/mediasoup/worker/out/Release/obj.target
 
-  ENTRYPOINT [ "node" ]
+  CMD [ "node" ]
